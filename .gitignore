@@ -2,3 +2,5 @@ nest-app.env
 migrate.sh
 create-ecr-push.sh
 buildscript.sh
+nes.env
+.env
