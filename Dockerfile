@@ -13,9 +13,6 @@ RUN yum install -y wget git
 # Install Apache
 RUN yum install -y httpd
 
-#Let us install the php-mysqlnd driver so that your PHP code can connect to MySQL database
-RUN dnf install -y php8.1-mysqlnd.x86_64
-
 # Install PHP and various extensions
 RUN yum clean metadata && \
 yum install -y \
@@ -87,6 +84,9 @@ RUN cp -av $REPOSITORY_NAME/$WEB_FILE_UNZIP/. /var/www/html
 
 # Remove the repository we cloned
 RUN rm -rf $REPOSITORY_NAME
+
+#Copy environment variable file from your local env or pwd to the image
+COPY .env .
 
 #change the value of max_execution_time = 30 to max_execution_time = 300 using sed command in /etc/php.ini
 RUN sed -i 's/^max_execution_time =.*/max_execution_time = 300/' /etc/php.ini

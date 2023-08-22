@@ -4,3 +4,6 @@ create-ecr-push.sh
 buildscript.sh
 nes.env
 .env
+nest-app.zip
+buildscript-github.sh
+nest-github.env
