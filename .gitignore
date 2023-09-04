@@ -7,3 +7,6 @@ nes.env
 nest-app.zip
 buildscript-github.sh
 nest-github.env
+nest-github-deployment.env
+nest-s3-deployment.env
+buildscript-s3.sh
